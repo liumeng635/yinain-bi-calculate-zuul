@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.187.38.192:8761/eureka/,http://10.187.11.188:8761/eureka/
+server:
+  port: 8080
+spring:
+  application:
+    name: servicezuul
+zuul:
+  routes:
+    api:
+      path: /api/**
+      serviceId: servicefeign
+    baidu:
+      path: /baidu/**
+      url: https://www.baidu.com
